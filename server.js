@@ -22,7 +22,7 @@ app.get("/about", (req, res) => {
 });
 
 app.use("/users", usersroute);
-app.use("/", caloriesroute);
+app.use("/addcalories", caloriesroute);
 app.use("/report", caloriesreport);
 
 const PORT = 5000;
