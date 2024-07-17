@@ -9,6 +9,8 @@ import usersroute from "./routes/users_routes.js";
 import caloriesroute from "./routes/caloriespost_routes.js";
 import caloriesreport from "./routes/calories_report.js";
 import bodyParser from "body-parser";
+import welcomePageRoute from "./routes/welcome_page_route.js"; // Import the welcome page route
+
 const app = express();
 
 //middlewares
@@ -24,6 +26,7 @@ app.get("/about", (req, res) => {
 app.use("/users", usersroute);
 app.use("/addcalories", caloriesroute);
 app.use("/report", caloriesreport);
+app.use("/", welcomePageRoute); // Use the welcome page route
 
 const PORT = 5000;
 app.listen(PORT, () => {
