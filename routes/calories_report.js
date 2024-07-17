@@ -48,14 +48,6 @@ router.get("/", async (req, res) => {
     // Fetch data with the query filter applied
     const calorieItems = await Calories.find(query);
 
-    if (calorieItems.length === 0) {
-      return res
-        .status(404)
-        .json({
-          message: "No records found for the provided user_id, year, and month",
-        });
-    }
-
     // Initialize arrays for each category
     const categorizedItems = {
       breakfast: [],
