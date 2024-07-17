@@ -42,12 +42,14 @@ router.post("/", async (req, res) => {
       });
     }
 
+    //Check that the month is correct
     if (month < 1 || month > 12) {
       return res
         .status(400)
         .json({ message: "month must be between 1 and 12" });
     }
 
+    //Check that the day is correct
     if (day < 1 || day > 31) {
       return res.status(400).json({ message: "day must be between 1 and 31" });
     }

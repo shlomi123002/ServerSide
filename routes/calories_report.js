@@ -32,6 +32,7 @@ router.get("/", async (req, res) => {
         .json({ message: "user_id, year, and month must be valid numbers" });
     }
 
+    //Check that the month is correct
     if (queryMonth < 1 || queryMonth > 12) {
       return res
         .status(400)
