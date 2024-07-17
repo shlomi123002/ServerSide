@@ -5,7 +5,6 @@
 import express from "express";
 import Calories from "../Schemas/calories_schema.js";
 import categories from "../categories.js";
-import User from "../Schemas/user_schema.js";
 
 const router = express.Router();
 
