@@ -1,4 +1,7 @@
-// welcome_page.js
+// David Tal, 207146218
+// Shlomi Cohen, 318502069
+// Bechor Eran Babayov, 318655453
+
 import express from "express";
 
 const router = express.Router();
