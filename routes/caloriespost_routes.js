@@ -11,9 +11,9 @@ const router = express.Router();
 // Add a new calorie consumption item
 router.post("/addcalories", async (req, res) => {
   try {
-    const { user_id, year, month, day, id, description, category, amount } =
+    const { user_id, year, month, day, description, category, amount } =
       req.body;
-
+    console.log(user_id, year, month, day, description, category, amount);
     // Ensure all required fields are provided
     if (
       !user_id ||
@@ -68,7 +68,6 @@ router.post("/addcalories", async (req, res) => {
       year: Number(year),
       month: Number(month),
       day: Number(day),
-      id: Number(id),
       description,
       category,
       amount: Number(amount),

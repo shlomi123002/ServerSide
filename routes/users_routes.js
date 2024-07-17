@@ -10,12 +10,11 @@ const router = express.Router();
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-
     // Validate the id parameter
     if (!id || isNaN(id)) {
       return res.status(400).json({ message: "Invalid or missing user ID" });
     }
-
+    console.log(User.find());
     // Find user by ID
     const user = await User.findOne({ id: Number(id) });
 

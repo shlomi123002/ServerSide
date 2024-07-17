@@ -3,13 +3,13 @@
 // Bechor Eran Babayov, 318655453
 
 import express from "express";
-import Calories from "../Schemas/calorriesreportSchema.js";
+import Calories from "../Schemas/caloriesSchema.js";
 import categories from "../categories.js";
 
 const router = express.Router();
 
 // Route to get all calorie data
-router.get("/report", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const { user_id, year, month } = req.query;
 
@@ -76,8 +76,8 @@ router.get("/report", async (req, res) => {
 
     res.status(200).json(categorizedItems);
   } catch (error) {
-    console.error("Error fetching calorie items:", error);
-    res.status(500).json({ message: "Error fetching calorie items" });
+    console.error("Error fetching calories items:", error);
+    res.status(500).json({ message: "Error fetching calories items" });
   }
 });
 

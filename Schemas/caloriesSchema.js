@@ -16,4 +16,4 @@ const calorieSchema = new Schema({
   amount: { type: Number, required: true },
 });
 
-export default mongoose.model("Calorie", calorieSchema);
+export default mongoose.model("Calorie", calorieSchema, "calories");

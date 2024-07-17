@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 const mongoDbConnection = async () => {
   // Connect to MongoDB
   try {
-    await mongoose.connect("mongodb://localhost:27017/Final_project");
+    await mongoose.connect("mongodb+srv://eranjob123:p7SLIFiG1FDbahqH@finalpeoject.ftsnfvw.mongodb.net/?retryWrites=true&w=majority&appName=finalpeoject");
 
     console.log("Database connected successfully");
   } catch (error) {
