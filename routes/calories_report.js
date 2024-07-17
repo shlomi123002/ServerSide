@@ -5,6 +5,7 @@
 import express from "express";
 import Calories from "../Schemas/caloriesSchema.js";
 import categories from "../categories.js";
+import User from "../Schemas/userSchema.js";
 
 const router = express.Router();
 
@@ -12,9 +13,12 @@ const router = express.Router();
 router.get("/report", async (req, res) => {
   try {
     const { user_id, year, month } = req.query;
+    console.log(user_id);
+    console.log(year);
+    console.log(month);
 
     // Ensure the required fields are provided
-    if(req.query[`user_id`] && req.query[`year`] && req.query[`month`] ){
+    if (!user_id || !year || !month) {
       return res
         .status(400)
         .json({ message: "user_id, year, and month are required" });
@@ -36,6 +40,11 @@ router.get("/report", async (req, res) => {
         .status(400)
         .json({ message: "month must be between 1 and 12" });
     }
+
+    console.log(userId);
+    console.log(queryYear);
+    console.log(queryMonth);
+    console.log(User.find());
 
     // Define the query
     const query = {

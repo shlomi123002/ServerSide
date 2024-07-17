@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 const mongoDbConnection = async () => {
   // Connect to MongoDB
   try {
-    await mongoose.connect("mongodb://localhost:27017/Final_project");
+    await mongoose.connect("mongodb+srv://shlomi123002:shlomi123456@caloriesproject.8ud5qjn.mongodb.net/");
 
     console.log("Database connected successfully");
   } catch (error) {
