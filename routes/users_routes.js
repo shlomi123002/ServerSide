@@ -3,7 +3,7 @@
 // Bechor Eran Babayov, 318655453
 
 import express from "express";
-import User from "../Schemas/userSchema.js";
+import User from "../Schemas/user_schema.js";
 
 const router = express.Router();
 

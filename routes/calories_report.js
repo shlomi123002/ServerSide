@@ -3,9 +3,9 @@
 // Bechor Eran Babayov, 318655453
 
 import express from "express";
-import Calories from "../Schemas/caloriesSchema.js";
+import Calories from "../Schemas/calories_schema.js";
 import categories from "../categories.js";
-import User from "../Schemas/userSchema.js";
+import User from "../Schemas/user_schema.js";
 
 const router = express.Router();
 

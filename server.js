@@ -3,7 +3,7 @@
 // Bechor Eran Babayov, 318655453
 
 import express from "express";
-import connection from "./DataBase.js";
+import connection from "./data_base.js";
 import us from "./about_us.js";
 import usersroute from "./routes/users_routes.js";
 import caloriesroute from "./routes/caloriespost_routes.js";
