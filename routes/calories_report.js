@@ -13,9 +13,6 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const { user_id, year, month } = req.query;
-    console.log(user_id);
-    console.log(year);
-    console.log(month);
 
     // Ensure the required fields are provided
     if (!user_id || !year || !month) {
@@ -40,12 +37,6 @@ router.get("/", async (req, res) => {
         .status(400)
         .json({ message: "month must be between 1 and 12" });
     }
-
-    console.log(userId);
-    console.log(queryYear);
-    console.log(queryMonth);
-    console.log(User.find());
-
     // Define the query
     const query = {
       user_id: userId,

@@ -14,7 +14,6 @@ router.get("/:id", async (req, res) => {
     if (!id || isNaN(id)) {
       return res.status(400).json({ message: "Invalid or missing user ID" });
     }
-    console.log(User.find());
     // Find user by ID
     const user = await User.findOne({ id: Number(id) });
 

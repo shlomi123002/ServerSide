@@ -26,7 +26,7 @@ app.use("/addcalories", caloriesroute);
 app.use("/report", caloriesreport);
 
 const PORT = 5000;
-const url = `https://caloriesmanagerwebservices.onrender.com`;
+const url = `https://serverside-final-project-c568.onrender.com`;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} (local)`);
 });
