@@ -14,7 +14,7 @@ router.get("/report", async (req, res) => {
     const { user_id, year, month } = req.query;
 
     // Ensure the required fields are provided
-    if (!user_id || !year || !month) {
+    if(req.query[`user_id`] && req.query[`year`] && req.query[`month`] ){
       return res
         .status(400)
         .json({ message: "user_id, year, and month are required" });
