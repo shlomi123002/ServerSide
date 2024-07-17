@@ -3,6 +3,7 @@
 // Bechor Eran Babayov, 318655453
 
 import mongoose from "mongoose";
+import AutoIncrementFactory from 'mongoose-sequence';
 const { Schema } = mongoose;
 
 // Ensure the type of all keys
@@ -15,5 +16,8 @@ const calorieSchema = new Schema({
   category: { type: String, required: true },
   amount: { type: Number, required: true },
 });
+const AutoIncrement = AutoIncrementFactory(mongoose);
+
+calorieSchema.plugin(AutoIncrement, { inc_field: 'id' });
 
 export default mongoose.model("Calorie", calorieSchema, "calories");

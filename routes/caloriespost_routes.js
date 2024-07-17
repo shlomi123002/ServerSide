@@ -11,14 +11,11 @@ const router = express.Router();
 // Add a new calorie consumption item
 router.post("/", async (req, res) => {
   try {
-    const { user_id, year, month, day, description, category, amount } =
+    let { user_id, year, month, day, description, category, amount } =
       req.body;
     // Ensure all required fields are provided
     if (
       !user_id ||
-      !year ||
-      !month ||
-      !day ||
       !description ||
       !category ||
       !amount
@@ -28,18 +25,14 @@ router.post("/", async (req, res) => {
           "All fields are required: user_id, year, month, day, description, category, amount",
       });
     }
-
-    // Validate fields
-    if (
-      isNaN(user_id) ||
-      isNaN(year) ||
-      isNaN(month) ||
-      isNaN(day) ||
-      isNaN(amount)
-    ) {
-      return res.status(400).json({
-        message: "user_id, year, month, day, and amount must be valid numbers",
-      });
+    if (!year){
+      year = new Date().getFullYear();
+    }
+    if (!month){
+      month = new Date().getMonth() + 1;
+    }
+    if (!day){
+      day = new Date().getDate();
     }
 
     //Check that the month is correct
