@@ -8,11 +8,12 @@ import us from "./about_us.js";
 import usersroute from "./routes/users_routes.js";
 import caloriesroute from "./routes/caloriespost_routes.js";
 import caloriesreport from "./routes/calories_report.js";
-
+import bodyParser from "body-parser";
 const app = express();
 
 //middlewares
 app.use(express.json());
+app.use(bodyParser.json())
 
 connection();
 
@@ -21,8 +22,8 @@ app.get("/about", (req, res) => {
 });
 
 app.use("/users", usersroute);
-app.use("/", caloriesroute);
-app.use("/", caloriesreport);
+app.use("/addcalories", caloriesroute);
+app.use("/report", caloriesreport);
 
 const PORT = 5000;
 const url = `https://caloriesmanagerwebservices.onrender.com`;

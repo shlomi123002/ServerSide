@@ -9,11 +9,10 @@ import validCategories from "../categories.js";
 const router = express.Router();
 
 // Add a new calorie consumption item
-router.post("/addcalories", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const { user_id, year, month, day, id, description, category, amount } =
+    const { user_id, year, month, day, description, category, amount } =
       req.body;
-
     // Ensure all required fields are provided
     if (
       !user_id ||
@@ -68,12 +67,10 @@ router.post("/addcalories", async (req, res) => {
       year: Number(year),
       month: Number(month),
       day: Number(day),
-      id: Number(id),
-      description,
-      category,
+      description:description,
+      category:category,
       amount: Number(amount),
     });
-
     await newCalorieItem.save();
     res.status(201).json(newCalorieItem);
   } catch (error) {
