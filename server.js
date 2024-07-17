@@ -9,7 +9,7 @@ import usersroute from "./routes/users_routes.js";
 import caloriesroute from "./routes/caloriespost_routes.js";
 import caloriesreport from "./routes/calories_report.js";
 import bodyParser from "body-parser";
-import welcomePageRoute from "./routes/welcome_page_route.js"; // Import the welcome page route
+import welcomePageRoute from "./routes/welcome_page_routes.js"; // Import the welcome page route
 
 const app = express();
 
