@@ -7,7 +7,10 @@ import mongoose from "mongoose";
 const mongoDbConnection = async () => {
   // Connect to MongoDB
   try {
-    await mongoose.connect("mongodb+srv://shlomi123002:shlomi123456@caloriesproject.8ud5qjn.mongodb.net");
+    await mongoose.connect("mongodb+srv://shlomi123002:shlomi123456@caloriesproject.8ud5qjn.mongodb.net", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     console.log("Database connected successfully");
   } catch (error) {
